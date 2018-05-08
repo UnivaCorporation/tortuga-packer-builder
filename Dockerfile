@@ -2,7 +2,7 @@
 FROM hashicorp/packer:full
 ENTRYPOINT [ "/bin/bash", "-c" ]
 RUN apk update && \
-    apk add ansible rsync && \
+    apk add ansible rsync openssh-client && \
     adduser -D builder && \
     rm -rf /var/cache/apk/*
 USER builder
