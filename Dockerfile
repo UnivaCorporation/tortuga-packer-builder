@@ -1,4 +1,5 @@
-FROM hashicorp/packer:light
+# Full version needed for cgo
+FROM hashicorp/packer:full
 ENTRYPOINT [ "/bin/bash", "-c" ]
 RUN apk update && \
     apk add ansible \
