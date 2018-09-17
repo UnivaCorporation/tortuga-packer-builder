@@ -3,7 +3,7 @@ FROM hashicorp/packer:full
 ENTRYPOINT [ "/bin/bash", "-c" ]
 # Root operations.  Install packages, add builder user, create directories
 RUN apk update && \
-    apk add ansible rsync openssh-client curl jq && \
+    apk add ansible rsync openssh-client curl jq python3 && \
     adduser -D builder && \
     mkdir -p /opt/google-cloud-sdk && \
     chown -R builder: /opt/google-cloud-sdk && \
