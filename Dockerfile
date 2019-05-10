@@ -5,7 +5,7 @@ ENTRYPOINT [ "/bin/bash", "-c" ]
 RUN sed -i 's/3\.7/3.8/g' /etc/apk/repositories 
 # Root operations.  Install packages, add builder user, create directories
 RUN apk update && \
-    apk add ansible rsync openssh-client curl jq python3 && \
+    apk add ansible rsync openssh-client curl jq python3 docker && \
     adduser -D builder && \
     mkdir -p /opt/google-cloud-sdk && \
     chown -R builder: /opt/google-cloud-sdk && \
