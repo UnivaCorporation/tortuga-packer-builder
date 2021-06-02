@@ -5,7 +5,7 @@ ENTRYPOINT [ "/bin/bash", "-c" ]
 RUN sed -i 's/3\.7/3.8/g' /etc/apk/repositories
 # Root operations.  Install packages, create directories
 RUN apk update && \
-    apk add ansible rsync openssh-client curl jq python3 docker && \
+    apk add ansible rsync openssh-client curl jq python3 docker make && \
     mkdir -p /opt && \
     rm -rf /var/cache/apk/*
 
